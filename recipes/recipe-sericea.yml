@@ -1,0 +1,57 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+name: sericea-main-hardened
+description: My personal flavor of secureblue for low footprint devices
+base-image: ghcr.io/secureblue/sericea-main-hardened
+image-version: latest
+
+modules:
+  - type: files
+    files:
+      - source: system
+        destination: /
+  - type: dnf
+    repos:
+      copr:
+        - name: atim/starship
+          chroot: fedora-42-x86_64
+        - name: emixampp/synology-drive
+          chroot: fedora-42-x86_64
+      files:
+        - https://repo.librewolf.net/librewolf.repo
+    install:
+      packages:
+        - clatd
+        - htop
+        - hw-probe
+        - https://github.com/rmcrackan/Libation/releases/download/v12.5.4/Libation.12.5.4-linux-chardonnay-amd64.rpm
+        - librewolf
+        - micro
+        - neovim
+        - starship
+        - synology-drive-noextra
+    remove:
+      packages:
+        - firefox
+        - firefox-langpacks
+        - tailscale
+
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - Hack
+        - Terminus
+
+  - type: systemd
+    system:
+      enabled:
+        - clatd.service
+        - zram-compaction.timer
+        - zram-recompression.timer
+
+  - type: kargs
+    arch: x86_64
+    kargs:
+      - rootflags=subvol=root,compress-force=zstd:3,discard=async,lazytime,noatime,space_cache=v2,x-systemd.device-timeout=0
+
+  - type: signing
