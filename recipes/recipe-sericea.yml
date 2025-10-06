@@ -19,12 +19,10 @@ modules:
           chroot: fedora-42-x86_64
       files:
         - https://download.opensuse.org/repositories/network:im:signal/Fedora_%OS_VERSION%/network:im:signal.repo
-        - https://repo.librewolf.net/librewolf.repo
     group-install:
       with-optional: true
       packages:
         - java
-        - libreoffice
     group-remove:
       packages:
         - firefox
@@ -34,8 +32,6 @@ modules:
         - htop
         - hw-probe
         - https://github.com/rmcrackan/Libation/releases/download/v12.5.4/Libation.12.5.4-linux-chardonnay-amd64.rpm
-        - librewolf
-        - micro
         - neovim
         - signal-desktop
         - starship
