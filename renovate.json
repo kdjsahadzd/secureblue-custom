@@ -3,6 +3,23 @@
   "extends": [
     "config:recommended"
   ],
+  "git-submodules": {
+    "enabled": true
+  },
+  "customManagers": [
+    {
+      "customType": "regex",
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "rmcrackan/Libation",
+      "managerFilePatterns": [
+        "recipes/recipe-*.yml"
+      ],
+      "matchStrings": [
+        "/v(?<currentValue>.*?)/Libation",
+        "/Libation.(?<currentValue>.*?)-"
+      ]
+    }
+  ],
   "packageRules": [
     {
       "matchDatasources": [
